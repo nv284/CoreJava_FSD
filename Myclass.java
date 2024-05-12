@@ -10,7 +10,7 @@ class Myclass{
         //int i = 
         long x = 123451234;System.out.println(x);
 
-        float f = 1234.2345666666993445F;
+        float f = 1234.23456666F;
         System.out.println(f);
     }
 }
