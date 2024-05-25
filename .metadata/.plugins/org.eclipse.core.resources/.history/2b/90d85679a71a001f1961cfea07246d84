@@ -1,0 +1,44 @@
+package com.sim.demo1;
+
+import java.util.Date;
+
+class User{
+	//Attribute 
+	String name ;
+	String phone ; 
+	String email;
+	char gender ; 
+	Date birthDate ;
+	String password;
+	
+	 User() {
+		name = "";
+		phone = "NA";
+		email =" abcd@gmail.com";
+		gender = 'F';
+		birthDate = new Date();
+		password = "password";
+	}
+	
+	
+}
+
+
+
+
+public class OOPS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       User user1 = new User();
+       User user2 = new User();
+       User user3 = user1;
+       user1.name= "Neeraj "; user1.phone="123445"; user1.password ="abcds"; user1.gender = 'M';
+       
+       System.out.println("user1 is : "+ user1 );
+       System.out.println("name "+user1.name+" "+user1.gender+" "+user1.phone +"  "+user1.password);
+       System.out.println("user2 is : "+ user2 );
+       System.out.println("user3 is : "+ user3 );
+	}
+
+}

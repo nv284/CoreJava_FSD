@@ -1,0 +1,17 @@
+package com.sim.demo1;
+
+public class Product {
+	String name; 
+	String ratings; String description; double price;
+
+
+	public Product(String name, String ratings, String description, double price) {
+		super();
+		this.name = name;
+		this.ratings = ratings;
+		this.description = description;
+		this.price = price;
+	}
+	void setProductData(String name , double price , String de)
+
+}

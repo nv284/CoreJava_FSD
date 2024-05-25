@@ -1,0 +1,25 @@
+package com.sim.demo1;
+
+import java.util.Date;
+
+class User{
+	//Attribute 
+	String name ;
+	String phone ; 
+	String email;
+	char gender ; 
+	Date birthDate ;
+	String password;
+}
+
+
+
+
+public class OOPS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

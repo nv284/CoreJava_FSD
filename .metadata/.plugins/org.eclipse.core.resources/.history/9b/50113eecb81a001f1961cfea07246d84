@@ -1,0 +1,31 @@
+package com.sim.demo1;
+//base class
+class Vehicle{
+	String brand;
+
+	Vehicle(String brand) {
+		super();
+		this.brand = brand;
+	}
+	void honk() {
+		System.out.println("honk honk");
+	}
+	
+}
+class Car extends Vehicle{
+	
+}
+
+
+
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

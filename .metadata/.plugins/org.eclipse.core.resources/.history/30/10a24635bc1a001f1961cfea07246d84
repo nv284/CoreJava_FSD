@@ -1,0 +1,26 @@
+package com.sim.demo1;
+
+class Box{
+	   private  double width;
+	   private  double height;
+	   private  double depth;
+	   
+}
+
+class BoxWeight {
+	
+}
+
+class Shipment{
+	
+}
+
+
+public class TestMutilevel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

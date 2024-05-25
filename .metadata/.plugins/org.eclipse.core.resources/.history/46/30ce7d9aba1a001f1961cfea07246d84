@@ -1,0 +1,45 @@
+package com.sim.demo1;
+//base class
+class Vehicle{
+	String brand;
+    String Repo;
+	Vehicle(String brand , String Repo) {
+		super();
+		this.brand = brand;
+		this.Repo = Repo;
+	}
+	void honk() {
+		System.out.println("honk honk");
+	}
+	
+}
+class Car extends Vehicle{
+	String model;
+
+	 Car(String brand, String model  ,String Repo) {
+		super(brand , Repo);
+		this.model = model;
+		
+	}
+	 void drive() {
+		 System.out.println(" Driving to "+ brand + "   "+model +"  have repo "+Repo);
+	 }
+	
+}
+
+class Bicycle extends Vehicle{
+	
+}
+
+
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

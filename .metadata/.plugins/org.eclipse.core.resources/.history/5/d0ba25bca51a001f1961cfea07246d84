@@ -1,0 +1,31 @@
+package com.sim.demo1;
+
+import java.util.Date;
+
+class User{
+	//Attribute 
+	String name ;
+	String phone ; 
+	String email;
+	char gender ; 
+	Date birthDate ;
+	String password;
+}
+
+
+
+
+public class OOPS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       User user1 = new User();
+       User user2 = new User();
+       User user3 = user1;
+       
+       System.out.println("user1 is : "+ user1 );
+       System.out.println("user2 is : "+ user2 );
+       System.out.println("user3 is : "+ user3 );
+	}
+
+}

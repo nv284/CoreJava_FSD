@@ -1,0 +1,48 @@
+package com.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.model.Model;
+import com.demo.service.ModelService;
+
+@RestController
+@RequestMapping("/flipkart.com")
+public class ModelController {
+	
+	@Autowired
+	private ModelService service;
+	
+	@GetMapping("/showProduct")
+	public List<Model> listAll(){
+		return service.ListAll();
+	}
+	@PostMapping ("/products")
+	public void add(@RequestBody Model model ) {
+		Model m = service.Save(model);
+		System.out.println(m);
+	}
+	@PutMapping("pro/{id}")
+	public ResponseEntity<Model> update(@RequestBody Model model, @PathVariable int id){
+		try {
+			Model m = service.get(id);
+			m.setName(model.name);
+			
+			
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+}

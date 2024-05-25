@@ -1,0 +1,24 @@
+package com.sim.demo1;
+//base class
+class Vehicle{
+	String brand;
+	
+	
+}
+class Car extends Vehicle{
+	
+}
+
+
+
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

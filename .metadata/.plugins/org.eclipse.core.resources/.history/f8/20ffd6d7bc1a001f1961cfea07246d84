@@ -1,0 +1,43 @@
+package com.sim.demo1;
+
+class Box{
+	   private  double width;
+	   private  double height;
+	   private  double depth;
+	 Box(double width, double height, double depth) {
+		super();
+		this.width = width;
+		this.height = height;
+		this.depth = depth;
+	}
+	   double volume() {
+		   return width*height*depth;
+	   }
+}
+
+class BoxWeight extends Box {
+	double weight;
+
+	public BoxWeight(double width, double height, double depth, double weight) {
+		super(width, height, depth);
+		this.weight = weight;
+	}
+	
+	
+}
+
+class Shipment extends BoxWeight{
+	double cost;
+	
+	
+}
+
+
+public class TestMutilevel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
