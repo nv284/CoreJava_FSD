@@ -1,0 +1,40 @@
+
+1. **Product Class**:
+    - Represents a product with `id`, `name`, and `price`.
+    - Overrides the `toString` method to provide a string representation of the product.
+
+2. **ProductManager Class**:
+    - Manages a list of products using an `ArrayList`.
+    - Provides methods to add, remove, list, and update products.
+    - Uses a `Scanner` for user input in an interactive console application.
+    - The `main` method contains a loop to handle user choices and perform corresponding actions.
+    
+    ====================================================================================================
+    
+    ### Expected Interactive Console Output
+
+```
+1. Add Product
+2. Remove Product
+3. List Products
+4. Update Product
+5. Exit
+Enter your choice: 1
+Enter product ID: 1
+Enter product name: Laptop
+Enter product price: 999.99
+Added: Laptop
+1. Add Product
+2. Remove Product
+3. List Products
+4. Update Product
+5. Exit
+Enter your choice: 3
+Listing all products:
+Product{id=1, name='Laptop', price=999.99}
+1. Add Product
+2. Remove Product
+3. List Products
+4. Update Product
+5. Exit
+E
