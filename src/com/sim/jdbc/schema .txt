@@ -1,0 +1,161 @@
+MongoDB connectivity 
+=======================
+1) create database in mongodb shell 
+
+mongosh> use blog
+switched to db blog
+blog> db.createCollection("posts")
+{ ok: 1 }
+blog> db.posts.insertMany([
+...   {
+...     title: "Post Title 2",
+...     body: "Body of post.",
+...     category: "Event",
+...     likes: 2,
+...     tags: ["news", "events"],
+...     date: Date()
+...   },
+...   {
+...     title: "Post Title 3",
+...     body: "Body of post.",
+...     category: "Technology",
+...     likes: 3,
+...     tags: ["news", "events"],
+...     date: Date()
+...   },
+...   {
+...     title: "Post Title 4",
+...     body: "Body of post.",
+...     category: "Event",
+...     likes: 4,
+...     tags: ["news", "events"],
+...     date: Date()
+...   }
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("666f2d92aba34d3772851c4b"),
+    '1': ObjectId("666f2d92aba34d3772851c4c"),
+    '2': ObjectId("666f2d92aba34d3772851c4d")
+========================================================
+
+
+schema 
+===========
+create schema testdb ;
+use testdb;
+
+table 
+============
+  create table Persons (
+  personId int primary key, F_name varchar(50), address varchar(100) 
+  );
+
+insert record 
+=============
+ insert into Persons values (101 , 'Anoop' , 'Mumbai');
+    insert into Persons values (102 , 'Sameer' , 'Bangluru'),(103,'rajni','Mumbai'),(105,'Rakesh','Pune');
+select * from Persons;
+
+
+
+Auto increment 
+================
+CREATE TABLE projects(
+  project_id INT primary key AUTO_INCREMENT, 
+  name VARCHAR(100) , 
+  start_date DATE, 
+  end_date DATE);
+  
+  insert into projects (name , start_date,end_date)
+  values('AI for Marketing' , '2019-08-01','2019-12-31'),
+   ('ML for Sales', '2019-05-15', '2019-11-20');
+
+INSERT INTO projects(name, start_date, end_date) 
+VALUES 
+  ('NeuroSynthIQ', '2023-12-01', '2024-12-31'), 
+  ('QuantumMind Explorer', '2023-05-15', '2024-12-20'), 
+  ('SentientBot Assistant', '2023-05-15','2024-10-20');
+  
+  
+  select * from projects;
+
+
+Update operation 
+=================
+UPDATE [LOW_PRIORITY] [IGNORE] table_name 
+SET 
+    column_name1 = expr1,
+    column_name2 = expr2,
+    ...
+[WHERE
+    condition];
+
+
+example :
+
+ select * from persons;
+  
+  update persons set address = 'Pune' where personId = 102;
+
+
+Delete Operation
+======================
+select * from persons;
+
+delete from persons where personId = 105; 
+
+
+
+
+
+============================================================
+ There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:
+Register the Driver class
+Create connection
+Create statement
+Execute queries
+Close connection
+
+download MySQL connectivity jar 
+=================================
+https://jar-download.com/artifacts/mysql/mysql-connector-java/8.0.20/source-code
+
+===========================================
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JDBCDemoClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection con = null;
+       try {
+    	   //step 1 
+    	   Class.forName("com.mysql.cj.jdbc.Driver");
+    	   System.out.println("Driver loaded ....");
+    	   //step 2 
+    	   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb" , "root","pass");
+    	  System.out.println("Conneted...");
+    	  //step 3
+    	  Statement stm = con.createStatement();
+    	  //step 4
+    	  ResultSet rs =  stm.executeQuery("select * from persons");
+    	  while(rs.next())
+    		  System.out.println(rs.getInt(1) +"   "+rs.getString(2)+ "   "+rs.getString(3));
+    	   //step 5
+    	   con.close();
+    	   
+       }catch (Exception e) {
+		// TODO: handle exception
+    	   System.out.println(e);
+	}
+	}
+
+}
+
+  
